@@ -43,7 +43,7 @@ Intel Macs as of Munki tools version 0.9.2.</string>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>om.github.jacobfgrant.download.VLC</string>
+    <string>com.github.jacobfgrant.download.VLC</string>
     <key>Process</key>
     <array>
         <dict>
