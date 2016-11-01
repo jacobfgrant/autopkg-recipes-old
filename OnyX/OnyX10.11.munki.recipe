@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads the latest OnyX DMG for OS X El Capitan and imports it into a Munki.</string>
+	<key>Identifier</key>
+	<string>com.github.jacobfgrant.munki.OnyX1011</string>
+	<key>Input</key>
+	<dict>
+		<key>APP_DESTINATION</key>
+		<string>/Applications/Utilities</string>
+		<key>MUNKI_REPO_SUBDIR</key>
+		<string>apps/system/onyx</string>
+		<key>NAME</key>
+		<string>OnyX11</string>
+		<key>pkginfo</key>
+		<dict>
+			<key>catalogs</key>
+			<array>
+				<string>testing</string>
+			</array>
+			<key>category</key>
+			<string>System</string>
+			<key>description</key>
+			<string>OnyX is a multifunctional utility for OS X. It allows you to verify the startup disk and the structure of its System files, to run miscellaneous tasks of system maintenance, to configure the hidden parameters of the Finder, Dock, Spotlight, and of some of Apple's own applications, to delete caches, to remove a certain number of files and folders that may become cumbersome, and more.</string>
+			<key>developer</key>
+			<string>Titanium</string>
+			<key>display_name</key>
+			<string>OnyX for OS X El Capitan</string>
+			<key>name</key>
+			<string>%NAME%</string>
+			<key>unattended_install</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.jacobfgrant.download.OnyX1011</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>pkg_path</key>
+				<string>%pathname%</string>
+				<key>repo_subdirectory</key>
+				<string>%MUNKI_REPO_SUBDIR%</string>
+			</dict>
+			<key>Comment</key>
+			<string>This processor imports the final pkg into the location specified in the INPUT string at top of recipe.</string>
+			<key>Processor</key>
+			<string>MunkiImporter</string>
+		</dict>
+	</array>
+</dict>
+</plist>
