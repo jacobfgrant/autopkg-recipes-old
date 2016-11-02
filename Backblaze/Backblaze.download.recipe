@@ -11,7 +11,7 @@
         <key>NAME</key>
         <string>Backblaze</string>
         <key>DOWNLOAD_URL</key>
-        <string>https://www.backblaze.com/business-install.html</string>
+        <string>https://www.backblaze.com/mac/install_backblaze.dmg</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
