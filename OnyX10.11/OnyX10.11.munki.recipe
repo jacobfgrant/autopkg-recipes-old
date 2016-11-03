@@ -11,7 +11,7 @@
 		<key>APP_DESTINATION</key>
 		<string>/Applications/Utilities</string>
 		<key>MUNKI_REPO_SUBDIR</key>
-		<string>apps/system/onyx</string>
+		<string>apps/system/onyx11</string>
 		<key>NAME</key>
 		<string>OnyX11</string>
 		<key>pkginfo</key>
