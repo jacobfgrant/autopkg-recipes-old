@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Description</key>
+    <string>Downloads the latest Money.Net installer DMG.</string>
+    <key>Identifier</key>
+    <string>com.github.jacobfgrant.download.MoneyNet</string>
+    <key>Input</key>
+    <dict>
+        <key>NAME</key>
+        <string>MoneyNet</string>
+    </dict>
+    <key>MinimumVersion</key>
+    <string>0.2.0</string>
+    <key>Process</key>
+    <array>
+        <dict>
+            <key>Arguments</key>
+            <dict>
+                <key>re_pattern</key>
+                <string>([4-9]\_[0-9]{2}).*\.dmg</string>
+                <key>result_output_var_name</key>
+                <string>moneynet_version</string>
+                <key>url</key>
+                <string>https://www.money.net/download</string>
+            </dict>
+            <key>Processor</key>
+            <string>URLTextSearcher</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>https://drtjl5ih9o9a1.cloudfront.net/downloads/Money_Net_MacOS_%moneynet_version%_jre.dmg</string>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+    </array>
+</dict>
+</plist>
