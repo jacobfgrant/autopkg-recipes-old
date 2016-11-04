@@ -18,8 +18,12 @@
 			<array>
 				<string>testing</string>
 			</array>
+            <key>category</key>
+            <string>System</string>
 			<key>description</key>
 			<string>f.lux makes your computer screen look like the room you're in, all the time. When the sun sets, it makes your computer look like your indoor lights. In the morning, it makes things look like sunlight again.</string>
+            <key>developer</key>
+            <string>f.lux</string>
 			<key>display_name</key>
 			<string>f.lux</string>
 			<key>name</key>

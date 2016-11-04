@@ -18,8 +18,12 @@
 			<array>
 				<string>testing</string>
 			</array>
+            <key>category</key>
+            <string>Office</string>
 			<key>description</key>
 			<string>A hackable text editor for the 21st Century.</string>
+            <key>developer</key>
+            <string>GitHub</string>
 			<key>display_name</key>
 			<string>Atom</string>
 			<key>name</key>
