@@ -12,14 +12,14 @@
         <string>SynologyCloudStationBackup</string>
     </dict>
     <key>MinimumVersion</key>
-    <string>0.2.0</string>
+    <string>0.4.0</string>
     <key>Process</key>
     <array>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>re_pattern</key>
-                <string>Version: ([4-9]\.[0-9]\.?[0-9]?)-[0-9]{4}</string>
+                <string>Version: ([1-9]+\.[0-9]+\.?[0-9]*)-[0-9]{4}</string>
                 <key>result_output_var_name</key>
                 <string>major_version</string>
                 <key>url</key>
@@ -32,7 +32,7 @@
             <key>Arguments</key>
             <dict>
                 <key>re_pattern</key>
-                <string>Version: [4-9]\.[0-9]\.?[0-9]?-([0-9]{4})</string>
+                <string>Version: [1-9]+\.[0-9]+\.?[0-9]*-([0-9]{4})</string>
                 <key>result_output_var_name</key>
                 <string>minor_version</string>
                 <key>url</key>
@@ -55,6 +55,21 @@
         <dict>
             <key>Processor</key>
             <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/Install Cloud Station Backup.pkg</string>
+                <key>expected_authority_names</key>
+                <array>
+                    <string>Developer ID Installer: Synology Inc. (X85BAK35Y4)</string>
+                    <string>Developer ID Certification Authority</string>
+                    <string>Apple Root CA</string>
+                </array>
+            </dict>
         </dict>
     </array>
 </dict>

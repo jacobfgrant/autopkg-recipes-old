@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads the latest Synology Cloud Station Drive DMG.</string>
+    <string>Downloads the latest Synology Hyper Backup Explorer DMG.</string>
     <key>Identifier</key>
-    <string>com.github.jacobfgrant.download.SynologyCloudStationDrive</string>
+    <string>com.github.jacobfgrant.download.SynologyHyperBackupExplorer</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>SynologyCloudStationDrive</string>
+        <string>SynologyHyperBackupExplorer</string>
     </dict>
     <key>MinimumVersion</key>
     <string>0.4.0</string>
@@ -23,7 +23,7 @@
                 <key>result_output_var_name</key>
                 <string>major_version</string>
                 <key>url</key>
-                <string>https://www.synology.com/en-us/releaseNote/CloudStationDrive</string>
+                <string>https://www.synology.com/en-us/releaseNote/HyperBackupExplorer</string>
             </dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
@@ -36,7 +36,7 @@
                 <key>result_output_var_name</key>
                 <string>minor_version</string>
                 <key>url</key>
-                <string>https://www.synology.com/en-us/releaseNote/CloudStationDrive</string>
+                <string>https://www.synology.com/en-us/releaseNote/HyperBackupExplorer</string>
             </dict>
             <key>Processor</key>
             <string>URLTextSearcher</string>
@@ -47,7 +47,7 @@
             <key>Arguments</key>
             <dict>
                 <key>url</key>
-                <string>https://global.download.synology.com/download/Tools/CloudStationDrive/%major_version%-%minor_version%/Mac/Installer/synology-cloud-station-drive-%minor_version%.dmg</string>
+                <string>https://global.download.synology.com/download/Tools/HyperBackupExplorer/%major_version%-%minor_version%/Mac/x86_64/HyperBackupExplorer-%major_version%-%minor_version%-mac.zip</string>
                 <key>filename</key>
                 <string>%NAME%.dmg</string>
             </dict>
@@ -58,17 +58,17 @@
         </dict>
         <dict>
             <key>Processor</key>
-            <string>CodeSignatureVerifier</string>
+            <string>Unarchiver</string>
             <key>Arguments</key>
             <dict>
-                <key>input_path</key>
-                <string>%pathname%/Install Cloud Station Backup.pkg</string>
-                <key>expected_authority_names</key>
-                <array>
-                    <string>Developer ID Installer: Synology Inc. (X85BAK35Y4)</string>
-                    <string>Developer ID Certification Authority</string>
-                    <string>Apple Root CA</string>
-                </array>
+                <key>archive_path</key>
+                <string>%pathname%</string>
+                <key>archive_format</key>
+                <string>zip</string>
+                <key>destination_path</key>
+                <string>%RECIPE_CACHE_DIR%/%NAME%</string>
+                <key>purge_destination</key>
+                <true/>
             </dict>
         </dict>
     </array>
