@@ -49,7 +49,7 @@
                 <key>url</key>
                 <string>https://global.download.synology.com/download/Tools/HyperBackupExplorer/%major_version%-%minor_version%/Mac/x86_64/HyperBackupExplorer-%major_version%-%minor_version%-mac.zip</string>
                 <key>filename</key>
-                <string>%NAME%.dmg</string>
+                <string>%NAME%.zip</string>
             </dict>
         </dict>
         <dict>
