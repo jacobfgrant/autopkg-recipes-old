@@ -62,7 +62,7 @@
             <key>Arguments</key>
             <dict>
                 <key>input_path</key>
-                <string>%pathname%/Install Cloud Station Backup.pkg</string>
+                <string>%pathname%/Install Cloud Station Drive.pkg</string>
                 <key>expected_authority_names</key>
                 <array>
                     <string>Developer ID Installer: Synology Inc. (X85BAK35Y4)</string>
