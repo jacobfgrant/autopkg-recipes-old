@@ -62,7 +62,7 @@
             <key>Arguments</key>
             <dict>
                 <key>archive_path</key>
-                <string>%pathname%</string>
+                <string>%pathname%.zip</string>
                 <key>archive_format</key>
                 <string>zip</string>
                 <key>destination_path</key>
